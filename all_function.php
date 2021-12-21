@@ -1,12 +1,19 @@
 <?php
-    function showmessage()
+    function sale($price)
     {
-        echo "<center>";
-        echo "<h2>ยินดีต้อนรับสู่เว็บไซต์</h2>";
-        echo "<h3>เพื่อประโยชน์ของสมาชิก</h3>";
-        echo "<h4>โปรดติดตามข่าวสารจากเว็บไซต์ ผ่านสื่อดังนี้</h4>";
-        echo "<h5>e-mail , sms และ เว็บบอร์ด</h5>";
-        echo "<hr>";
-        echo "</center>";
+
+        $sale1 = ($price * 0.03);
+        $sale2 = ($price * 0.05);
+        if($price<5000){
+            echo "สินค้าราคา: $price<br>";
+            echo "ได้ส่วนลด: $sale1 บาท <br>";
+            echo "ราคาสุทธิ: ".($price - $sale1)." บาท <br>";
+            return $sale1;
+        }else if($price>=5000){
+            echo "สินค้าราคา: $price<br>";
+            echo "ได้ส่วนลด: $sale2 บาท <br>";
+            echo "ราคาสุทธิ: ".($price - $sale2)." บาท <br>";
+            return $sale2;
+        }
     }
 ?>
